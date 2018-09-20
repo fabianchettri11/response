@@ -1,2 +1,2 @@
 "user strict";
-console.log("Hello world");
+console.log("h1");
