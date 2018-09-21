@@ -72,7 +72,7 @@ for(var i=0;i<10;i++)
 
 }
 }
-passcheck("1234556789$");
+
 
 var string="abcd@efgh@ijkl";
 var testarray=string.split("@");
@@ -115,3 +115,35 @@ function EmailAlert(){
 		alert("Failed");
 }
 console.log(checkemail("ab.cd@gmail.com"));
+
+/*
+function replace (str,index,char){
+
+}
+replace("cat",2,"p");
+*/
+//replace()
+var str = "Mr Blue has a blue house and a blue car";
+var res = str.replace(/blue/g, "brown");
+console.log(res);
+
+//indexOf()
+var str = "Hello world, welcome to the universe.";
+var n = str.indexOf("welcome");
+console.log(n);
+//include()
+var str = "Hello world, welcome to the universe.";
+var n = str.includes("world");
+console.log(n);
+//slice()
+var str = "Apple";
+var res = str.slice(1, 4);
+console.log(res);
+//charCodeAt()
+var str = "HELLO WORLD";
+var n = str.charCodeAt(2);
+console.log(n);
+//search()
+var str = "Visit W3 Schools!";
+var n = str.search("!");
+console.log(n);
