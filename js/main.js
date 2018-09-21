@@ -1,5 +1,5 @@
 "user strict";
-var chars=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","[","]","@","=","$","!","#","%","^","&","*","(",")","{","}"];
+var chars=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","[","]","@","=","$","!","#","%","^","&","*","(",")","{","}","1","2","3","4"];
 var pass="";
 var ex=Math.floor(Math.random()*5)+12;
 for(var j=0;j<ex;j++){
@@ -44,4 +44,31 @@ for(var i=0;i<10;i++)
 	    }
 		row.append(col);
  	}
+ 	//password validator
+ 	var specialchars=["!","@","#","$","%","^","&","*","(",")","_","+","="];
+ var num=["0","1","2","3","4","5","6","7","8","9"];
+  function passcheck(str)
+  {
+  	var condmet=0;
+  	if(str.length>=8)
+  		condmet+=1;
+ for(var i=0;i<num.length;i++){
+ 	if(str.includes(num[i])){
+ 		condmet+=1;
+ 		break;
+ 	}
+ }
+ for(var j=0;j<specialchars.length;j++){
+ 	if(str.includes(specialchars[j])){
+ 		condmet+=1;
+ 		break;
+ 	}
+ }
+ if(condmet==3)
+ 	console.log("true") ;
+ else
+ 	console.log("false") ;
+
 }
+}
+passcheck("1234556789$")
