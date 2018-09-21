@@ -147,3 +147,7 @@ console.log(n);
 var str = "Visit W3 Schools!";
 var n = str.search("!");
 console.log(n);
+//valueOf
+var str = "Hello World!";
+var res = str.valueOf();
+console.log(res);
