@@ -47,28 +47,71 @@ for(var i=0;i<10;i++)
  	//password validator
  	var specialchars=["!","@","#","$","%","^","&","*","(",")","_","+","="];
  var num=["0","1","2","3","4","5","6","7","8","9"];
-  function passcheck(str)
+  function Checkpass()
   {
+  	var passToCheck=document.getElementById("passCheck").value;
   	var condmet=0;
-  	if(str.length>=8)
+  	if(passToCheck.length>=8)
   		condmet+=1;
  for(var i=0;i<num.length;i++){
- 	if(str.includes(num[i])){
+ 	if(passToCheck.includes(num[i])){
  		condmet+=1;
  		break;
  	}
  }
  for(var j=0;j<specialchars.length;j++){
- 	if(str.includes(specialchars[j])){
+ 	if(passToCheck.includes(specialchars[j])){
  		condmet+=1;
  		break;
  	}
  }
  if(condmet==3)
- 	console.log("true") ;
- else
- 	console.log("false") ;
+ alert("It works");
+  else
+ 	alert("No") ;
 
 }
 }
-passcheck("1234556789$")
+passcheck("1234556789$");
+
+var string="abcd@efgh@ijkl";
+var testarray=string.split("@");
+console.log(testarray);
+
+function splitstring(str,splitat){
+var arr=[];
+var lastindex=0;
+for(var i=0;i<str.length;i++){
+	if(str.charAt(i)==splitat){
+		var addString=str.slice(lastindex, i);
+		arr.push(addString);
+		lastindex=i+1;
+	}
+	
+}
+console.log(arr);
+}
+splitstring("Cat@dog@fish@tree","@");
+
+function checkemail(str){
+	str=str.toLowerCase();
+	if(str.charAt(0)=="@")
+		return false;
+	var arr1=str.split("@");
+	if(arr1.length!=2)
+		return false;
+	if(!arr1[1].includes("."))
+		return false;
+	for(var i=0;i< 26;i++){
+		if(arr1[1].endsWith(chars[i]))
+			return true;
+    }
+	return false;
+}
+function EmailAlert(){
+	if(checkemail(document.getElementById("emailEntry").value))
+		alert("Sucessfull");
+	else
+		alert("Failed");
+}
+console.log(checkemail("ab.cd@gmail.com"));
