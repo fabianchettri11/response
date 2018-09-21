@@ -154,3 +154,10 @@ console.log(res);
 //trim()
 var str = "       Hello         ";
 alert(str.trim());
+
+function replacestring(str,num,str1)
+{
+	var res =str.slice(0,num)+str1+str.slice((num+1));
+	console.log(res);
+}
+replacestring("caterp",2,"p");
