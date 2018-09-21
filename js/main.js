@@ -22,6 +22,7 @@ for(var row=0;row<5;row++)
 		console.log("Col:" + col);
 	}
 }
+//Checkersbox
 var table=document.getElementById("ntable");
 for(var i=0;i<10;i++)
 {
@@ -29,9 +30,18 @@ for(var i=0;i<10;i++)
 	table.append(row);
 	for(var ii=0;ii<10;ii++){
 		var col=document.createElement("td");
-		col.setAttribute("class","tableData");
-        
+		if(i%2==0){
+			if(ii % 2 == 0)
+				col.setAttribute("class","column1");
+		 	else 
+				col.setAttribute("class","column2");
+		}	
+		else if(i%2!=0){
+			if(ii% 2==0)
+				col.setAttribute("class","column2");
+			else
+				col.setAttribute("class","column1");
+	    }
 		row.append(col);
-	}
- 
+ 	}
 }
