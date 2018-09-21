@@ -151,3 +151,6 @@ console.log(n);
 var str = "Hello World!";
 var res = str.valueOf();
 console.log(res);
+//trim()
+var str = "       Hello         ";
+alert(str.trim());
