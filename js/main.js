@@ -151,9 +151,6 @@ console.log(n);
 var str = "Hello World!";
 var res = str.valueOf();
 console.log(res);
-//trim()
-var str = "       Hello         ";
-alert(str.trim());
 
 function replacestring(str,num,str1)
 {
@@ -161,3 +158,41 @@ function replacestring(str,num,str1)
 	console.log(res);
 }
 replacestring("caterp",2,"p");
+	
+
+function IndexAt(str,char)
+{
+	for(var i=0;i<str.length;i++)
+	{
+	 if(str.charAt(i)== char)
+	 	console.log(i);
+	    break;
+	}
+}
+IndexAt("dogodododododdododo","d");
+
+function IncludesChar(str,char){
+	for(var i=0;i<str.length;i++){
+		if(str.charAt(i)==char)
+			return true;
+	}
+return false;
+}
+console.log(IncludesChar("fish","j"));
+
+
+function SliceString(str,start,stop){
+	var word="";
+	for(var i=start;i<=stop;i++){
+		word +=str[i];
+	}
+	return word;
+}
+console.log(SliceString("apple",1,3));
+
+function Replace(str,index,newchar){
+	var string1= str.slice(0,index);
+	var string2= str.slice(index+1);
+	console.log(string1+newchar+string2);
+}
+Replace("butter",1,"e");
