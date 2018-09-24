@@ -196,3 +196,65 @@ function Replace(str,index,newchar){
 	console.log(string1+newchar+string2);
 }
 Replace("butter",1,"e");
+
+function ModString(val){
+	if(typeof val!="string")
+    {
+    	console.log("please use a string");
+    	return;
+}
+	this.val=val,
+	this.ModSlice=function(start,stop){
+   				var newVal="";
+ 		for(var i=start;i<=stop;i++){
+ 				newVal+= this.val[i];
+		 	}
+   				this.val=newVal;
+	},
+	this.lastindex=function(char){
+		for(var i=this.val.length;i>=0;i--)
+		{
+			if(this.val.charAt(i)==char){
+				console.log(i);
+				return;
+			}
+		}
+		console.log("Character not found");	
+	},
+	this.CountLength=function(){
+
+var count=0;
+while(this.val[count]!=undefined){
+	count++;
+	}
+	console.log(count);
+}
+
+
+}
+var myString=new ModString("This is my string");
+console.log(typeof myString.val);
+
+//myString.ModSlice(0,13);
+console.log(myString.val);
+
+myString.lastindex("i");
+var babyCat=new ModString("kitten");
+babyCat.CountLength();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
