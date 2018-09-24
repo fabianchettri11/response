@@ -244,7 +244,9 @@ babyCat.CountLength();
 
 
 
-
+$("#myButton").click(function(){
+	$("#myH1").toggle(500);
+})
 
 
 
