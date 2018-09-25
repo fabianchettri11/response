@@ -4,17 +4,56 @@
 	<title></title>
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+    $("button").click(function(){
+        $("h1").toggle({
+            });
+    });
+    
+});
+
+</script>
+	<script>
+$(document).ready(function(){
+    $("#msg").click(function(){
+        alert("Text: jquery to display alert when we click on <p>" + $("#test").text());
+    });
+});
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#test1").text("Hello world!");
+    });
+});    
+$(document).ready(function(){
+	$("#date").click(function(){
+		$("div").append("<p>"+Date()+"</p>");
+
+	});
+ 
+});
+</script>
+
 </head>
 <body>
-	<button id="myButton">Hello and Goodbye</button>
+
+	<button id="myButton">click me to toggle</button>
 	<h1 id="myH1">Weeeeeeeeeeeeeeeeeeeee</h1>
 <table id="ntable">
+	<p id="msg">jquery to show alert message</p>
+
+	<p id="test1">This is a paragraph.</p>
+ <button id="btn1">Set Text</button><br>
+
+<div id="date">
+<h1>click me to add current date</h1>
+</div>
 
 <input type="password" id="passCheck">
 <button onclick="Checkpass()">Check my password</button>
-
 <input type="text" id="emailEntry">
 <button onclick="EmailAlert()">Check my Email</button>
+
 </table>
 </body>
 <script src="./js/main.js">
