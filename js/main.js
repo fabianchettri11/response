@@ -23,6 +23,7 @@ for(var row=0;row<5;row++)
 	}
 }
 //Checkersbox
+var data=[];
 var table=document.getElementById("ntable");
 for(var i=0;i<10;i++)
 {
@@ -42,8 +43,27 @@ for(var i=0;i<10;i++)
 			else
 				col.setAttribute("class","column1");
 	    }
+		data.push(col);	
 		row.append(col);
+ 	
  	}
+
+}
+ 	var tableindex;
+ 	function ColorfulTable(){
+ 		tableindex=Math.floor(Math.random()*data.length);
+ 		var r=Math.floor(Math.random()*256);
+		var g=Math.floor(Math.random()*256);
+		var b=Math.floor(Math.random()*256);
+		data[tableindex].style.backgroundColor="rgb("+r+","+g+","+b+")";
+		setTimeout(ColorfulTable,0.01);
+
+ 	}
+ColorfulTable();
+
+
+
+
  	//password validator
  	var specialchars=["!","@","#","$","%","^","&","*","(",")","_","+","="];
  var num=["0","1","2","3","4","5","6","7","8","9"];
@@ -65,12 +85,11 @@ for(var i=0;i<10;i++)
  		break;
  	}
  }
+
  if(condmet==3)
  alert("It works");
   else
  	alert("No") ;
-
-}
 }
 
 
@@ -248,9 +267,38 @@ $("#myButton").click(function(){
 	$("#myH1").toggle(500);
 })
 
+var count=0;
+$(document).ready(function(){
+	$("#date").click(function(){
+		if(count %2==0)
+		$("#date").append("<p class='evenDate'>"+new Date()+"</p>");
+		else
+			$("#date").append("<p class='oddDate'>"+new Date()+"</p>");
+		count++;
+	
+	});
+ 
+});
+
+$("#addDate").click(function(){
+addDate();
+});
 
 
+function addDate(){ 
+	if(count%10==0)
+		$("#date").empty();
+		var r=Math.floor(Math.random()*256);
+		var g=Math.floor(Math.random()*256);
+		var b=Math.floor(Math.random()*256);
+		if(count %2==0)
+		$("#date").append("<p class='evenDate style='background-color:rgb("+r+","+g+","+b+")'>"+new Date()+"</p>");
+		else
+			$("#date").append("<p class='oddDate' style='background-color:rgb("+r+","+g+","+b+")'>"+new Date()+"</p>");
+		count++;
+	setTimeout(addDate,1000);
 
+}
 
 
 

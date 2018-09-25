@@ -10,3 +10,11 @@ td{
 .column2{
 background-color: black;
 }
+.evenDate{
+	background-color: tomato;
+	color: white;
+}
+.oddDate{
+	background-color: blue;
+	color: white;
+}
