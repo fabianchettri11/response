@@ -336,6 +336,12 @@ $("#btncolor").click(function(){
 	$("body").css("background-color",color);
 })
 
-
+$("#change").click(function(){
+	console.log($(".bgcolor").css("background-color"));
+	if($(".bgcolor").css("background-color")== "rgba(0, 0, 0, 0)")
+	$("#clr").css("background-color","red");
+	else
+		$("#clr").css("background-color","rgba(0, 0, 0, 0)")
+})
 
 
