@@ -299,8 +299,9 @@ function addDate(){
 	setTimeout(addDate,1000);
 
 }
-/*
-vr data1=["apple","ball","cat","dog","egg","fish","gun","hat","ink","jet","kill","let","mine","net"];
+//inserting random variables
+var data1=["apple","ball","cat","dog","egg","fish","gun","hat","ink","jet","kill","let","mine","net","set","sea"];
+var tdEls = [];
 var table=document.getElementById("nestable");
 for(var i=0;i<4;i++)
 {
@@ -308,27 +309,26 @@ for(var i=0;i<4;i++)
 	table.append(row);
 	for(var ii=0;ii<4;ii++){
 		var col=document.createElement("td");
-		if(i%2==0){
-			if(ii % 2 == 0)
-				col.setAttribute("class","column1");
-		 	else 
-				col.setAttribute("class","column2");
-		}	
-		else if(i%2!=0){
-			if(ii% 2==0)
-				col.setAttribute("class","column2");
-			else
-				col.setAttribute("class","column1");
-	    }
-		data1.push(col);	
+
+		tdEls.push(col);	
 		row.append(col);
  	
  	}
 
-}*/
+}
+console.log(data1);
+console.log(tdEls);
+var cnt = 0;
+var randInd;
+while(data1.length > 0){
+	randInd = Math.floor(Math.random()*data1.length);
+	tdEls[cnt].innerHTML = data1[randInd];
+	data1.splice(randInd, 1);
+	cnt++;
+}
 $("#buttonid").click(function(){
 	var name = $("#inputid").val();
-	alert("Your entered text:"+name);
+	alert("Your entMath.floor(Math.random()*data1.length);ered text:"+name);
 });
 $("#btncolor").click(function(){
 	var color=$("#colorid").val();
@@ -343,5 +343,27 @@ $("#change").click(function(){
 	else
 		$("#clr").css("background-color","rgba(0, 0, 0, 0)")
 })
+/*
+$("#jumbler").click(function(){
+	var a=this.split(""),
+	n=a.length;
+	for(var i=n-1;i>0;i--){
+		var j=Math.floor(Math.random()*(i+1));
+		var tem=a[i];
+		a[i]=a[j];
+		a[j]=tem;
+	}
+	return a.join("");
+})*/
 
-
+function jumble(str){
+	var scramble=""
+	var arr=str.split("");
+	while(arr.length>0){
+		var randint =Math.floor(Math.random()*arr.length);
+		scramble +=arr[randint];
+		arr.splice(randint,1)
+	}
+console.log(scramble);
+}
+console.log(jumble("fish"));
