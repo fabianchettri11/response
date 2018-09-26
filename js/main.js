@@ -299,11 +299,42 @@ function addDate(){
 	setTimeout(addDate,1000);
 
 }
+/*
+vr data1=["apple","ball","cat","dog","egg","fish","gun","hat","ink","jet","kill","let","mine","net"];
+var table=document.getElementById("nestable");
+for(var i=0;i<4;i++)
+{
+	var row=document.createElement("tr");
+	table.append(row);
+	for(var ii=0;ii<4;ii++){
+		var col=document.createElement("td");
+		if(i%2==0){
+			if(ii % 2 == 0)
+				col.setAttribute("class","column1");
+		 	else 
+				col.setAttribute("class","column2");
+		}	
+		else if(i%2!=0){
+			if(ii% 2==0)
+				col.setAttribute("class","column2");
+			else
+				col.setAttribute("class","column1");
+	    }
+		data1.push(col);	
+		row.append(col);
+ 	
+ 	}
 
-
-
-
-
+}*/
+$("#buttonid").click(function(){
+	var name = $("#inputid").val();
+	alert("Your entered text:"+name);
+});
+$("#btncolor").click(function(){
+	var color=$("#colorid").val();
+	console.log(color);
+	$("body").css("background-color",color);
+})
 
 
 
