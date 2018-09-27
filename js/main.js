@@ -424,7 +424,7 @@ console.log("Palindrome");
 		var lname=false;
 		var phoneno=false;
 		var email=false;
-		var pass=false;
+		var pass=true;
 		//fname=$("#fname").val();
 		//lname=$("#lname").val();
 		//phoneno=$("#phno").val();
@@ -449,6 +449,9 @@ console.log("Palindrome");
         		$("#submit1").attr("disabled","disabled");
 	})
 
+	$("#submit1").click(function(){
+		alert("Registered sucessfully");
+	})
 
 	
 
