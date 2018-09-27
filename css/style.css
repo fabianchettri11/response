@@ -19,7 +19,11 @@ background-color: black;
 	color: white;
 }
 #gme{
-	border:solid 1px black;
-	background-color: lightblue;
+padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #555;
+    color: white;
+    border: solid 1px #666;
 
 }

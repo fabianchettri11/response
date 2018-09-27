@@ -67,9 +67,8 @@ ColorfulTable();
  	//password validator
  	var specialchars=["!","@","#","$","%","^","&","*","(",")","_","+","="];
  var num=["0","1","2","3","4","5","6","7","8","9"];
-  function Checkpass()
+  function Checkpass(passToCheck)
   {
-  	var passToCheck=document.getElementById("passCheck").value;
   	var condmet=0;
   	if(passToCheck.length>=8)
   		condmet+=1;
@@ -87,9 +86,10 @@ ColorfulTable();
  }
 
  if(condmet==3)
- alert("It works");
+
+ 	return true;
   else
- 	alert("No") ;
+  	return false;
 }
 
 
@@ -127,12 +127,12 @@ function checkemail(str){
     }
 	return false;
 }
-function EmailAlert(){
+/*function EmailAlert(){
 	if(checkemail(document.getElementById("emailEntry").value))
 		alert("Sucessfull");
 	else
 		alert("Failed");
-}
+}*/
 console.log(checkemail("ab.cd@gmail.com"));
 
 /*
@@ -377,8 +377,15 @@ $("#game").click(function(){
 	$("#submit").click(function(){
  		var input=$("#userinput").val();
  		if(input == random){
- 		alert("Congratulation");
+ 		alert("Congratulation........!");
 	 	alert("your guess count:"+count);
+	 	if(count>=3)
+	 		alert("Good");
+	 	else if(count>=6)
+	 		alert("Not bad");
+	 	else
+	 		alert("Not Good");
+
  			
  		}
 		if (input<random){
@@ -392,7 +399,58 @@ $("#game").click(function(){
 			
 		}
  
-		
- })
-
+	 })
 })
+
+$("#res").click(function(){
+var usrinput=$("#in").val();
+var arr= usrinput.split("");
+console.log(arr);
+var arr4=arr.reverse("");
+console.log(arr4);
+var newstr=arr4.join("");
+console.log(newstr);
+
+if(usrinput!=newstr){
+	console.log("Not a Palindrome");
+}
+else
+console.log("Palindrome");
+
+ })
+//Full form validation
+	$(document).keyup(function(){
+		var fname=false;
+		var lname=false;
+		var phoneno=false;
+		var email=false;
+		var pass=false;
+		//fname=$("#fname").val();
+		//lname=$("#lname").val();
+		//phoneno=$("#phno").val();
+		//email=$("#email").val();
+		//pass=$("#pass").val();
+		if($("#fname").val().length>0)
+			fname = true;
+		
+			if($("#Lname").val().length>0)
+				lname= true;
+		
+		 if($("#phno").val().length==10){
+			phoneno= true;
+		 }
+        email=checkemail($("#email").val());
+        pass=Checkpass($("#pass").val());
+
+        if(fname && lname && email && phoneno && pass){
+        	$("#submit1").removeAttr("disabled");
+        }
+        	else
+        		$("#submit1").attr("disabled","disabled");
+	})
+
+
+	
+
+
+
