@@ -367,7 +367,7 @@ function jumble(str){
 console.log(scramble);
 }
 console.log(jumble("fish"));
-
+//GAME
 var count =1;
 $("#game").click(function(){
 	var random =Math.ceil(Math.random()*20);
@@ -378,19 +378,21 @@ $("#game").click(function(){
  		var input=$("#userinput").val();
  		if(input == random){
  		alert("Congratulation");
-	 	alert("your guess count"+count);
+	 	alert("your guess count:"+count);
+ 			
  		}
 		if (input<random){
  			alert("Too low");
  			count++;
+ 			
  		}
  		else if(input>random){
  			alert("Too High");
 			count++;
+			
 		}
  
-
-
+		
  })
 
 })
