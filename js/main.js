@@ -379,13 +379,7 @@ $("#game").click(function(){
  		if(input == random){
  		alert("Congratulation........!");
 	 	alert("your guess count:"+count);
-	 	if(count>=3)
-	 		alert("Good");
-	 	else if(count>=6)
-	 		alert("Not bad");
-	 	else
-	 		alert("Not Good");
-
+	 	
  			
  		}
 		if (input<random){
@@ -451,6 +445,12 @@ console.log("Palindrome");
 
 	$("#submit1").click(function(){
 		alert("Registered sucessfully");
+	$('#fname').val('');
+	$('#Lname').val('');
+	$('#phno').val('');
+	$('#email').val('');
+	$('#pass').val('');
+
 	})
 
 	
