@@ -36,3 +36,13 @@ padding: 5px;
     border: solid 1px #666;
 
 }
+#input-group{
+	width:900px;
+}
+#bodydiv{
+	background-image: url('/home/bid/Desktop/wed/bootstrap/bck2.jpg');
+  		
+  	}
+  	.item{
+  		height:200px; 
+  	}
