@@ -1,33 +1,84 @@
-<html lang="en">
-  <head>    
-   </head>
-   <body>
-        <table cellpadding="10" cellspacing="0">
-            <tbody id="tby1">
-                <tr>
-                    <td>11</td><td>22</td><td>33</td><td>A</td>
-                </tr>
-                <tr>
-                    <td>11</td><td>22</td><td>33</td><td>B</td>
-                </tr>
-            </tbody>
-        </table>
-        <script type="text/javascript">
-            var oTby1 = document.getElementById('tby1');
-            for(i=0; i<oTby1.rows.length; i++){
-                switch(oTby1.rows[i].cells[oTby1.rows[i].cells.length-1].innerHTML.toLowerCase()) {
-                    case 'a':
-                        bgColor = 'red';
-                        break;
-                    case 'b':
-                        bgColor = 'green';
-                        break;
-                    default:
-                        bgColor='white';
-                }
-                oTby1.rows[i].style.backgroundColor = bgColor;
-            }
-        </script>
-    </body>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
 
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: red;
+}
+</style>
+</head>
+<body>
+
+{
+    font-size: 28px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Scroll Down</h2>
+  <p>Scroll down to see the sticky effect.</p>
+</div>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+</body>
 </html>

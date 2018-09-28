@@ -379,8 +379,7 @@ $("#game").click(function(){
  		if(input == random){
  		alert("Congratulation........!");
 	 	alert("your guess count:"+count);
-	 	
- 			
+	 				
  		}
 		if (input<random){
  			alert("Too low");
