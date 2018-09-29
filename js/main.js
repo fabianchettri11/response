@@ -451,7 +451,9 @@ console.log("Palindrome");
 	$('#pass').val('');
 
 	})
-
+	$(".subimg").click(function(){
+		$("#mainimg").attr("src", $(this).attr("src"));
+	})
 	
 
 
